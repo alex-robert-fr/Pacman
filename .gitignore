@@ -1,0 +1,5 @@
+pacman
+raylib/
+.cache/
+**/*.o
+compile_commands.json
