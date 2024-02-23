@@ -23,7 +23,7 @@ clean:
 
 re: clean all
 
-run: re
+run: all
 	./$(TARGET)
 
 .PHONY: all init clean re run 
