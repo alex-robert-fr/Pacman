@@ -2,7 +2,8 @@ TARGET	=	pacman
 CC			= gcc
 CFLAGS	= -Wall -Wextra -Werror -I./raylib/src
 LDFLAGS	=	-L./raylib/src -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
-SOURCES =	./src/main.c
+SOURCES =	./src/main.c	\
+					./src/player/player.c
 OBJECTS	=	$(SOURCES:.c=.o)
 
 all: $(TARGET)
