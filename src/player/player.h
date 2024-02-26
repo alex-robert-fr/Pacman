@@ -4,11 +4,11 @@
 #include "raylib.h"
 
 typedef struct Player {
-	Vector2 position;
+	Vector2 *position;
 	int			speed;
 } Player;
 
-Player	createPlayer(Vector2 position, int speed);
+Player*	createPlayer(Vector2 *position, int speed);
 void		drawPlayer(Vector2 position);
 
 #endif
