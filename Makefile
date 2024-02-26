@@ -14,16 +14,20 @@ $(TARGET): $(OBJECTS)
 	$(CC) $(CFLAGS) -c $< -o $@ $(LDFLAGS)
 
 init:
-	rm -rf raylib
 	git clone https://github.com/raysan5/raylib.git raylib
 	make -C raylib/src PLATFORM=PLATFORM_DESKTOP
 
 clean:
 	rm -rf $(OBJECTS) $(TARGET)
 
+clean_all: clean
+	rm -rf raylib
+
 re: clean all
+
+reset: clean_all init all
 
 run: all
 	./$(TARGET)
 
-.PHONY: all init clean re run 
+.PHONY: all init clean re reset run 
